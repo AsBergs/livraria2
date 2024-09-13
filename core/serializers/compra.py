@@ -8,7 +8,7 @@ class CompraSerializer(ModelSerializer):
         fields = "__all__"
 
 class CompraSerializer(ModelSerializer):
-    usuario = CharField(source="user.email", read_only=True) # inclua essa linha
-
+    usuario = CharField(source="user.email", read_only=True)
+    
 class CompraSerializer(ModelSerializer):
-    status = CharField(source="get_status_display", read_only=True) # inclua essa linha
+    status = CharField(source="get_status_display", read_only=True) 
