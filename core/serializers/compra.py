@@ -1,5 +1,7 @@
 from rest_framework.serializers import (
     CharField,
+    CurrentUserDefault,
+    HiddenField, 
     ModelSerializer,
     SerializerMethodField,
 )
@@ -20,6 +22,7 @@ class ItensCompraSerializer(ModelSerializer):
         depth = 1
 
 class CriarEditarItensCompraSerializer(ModelSerializer):
+    usuario = HiddenField(default=CurrentUserDefault())
     class Meta:
         model: Compra
         fields: ("livro", "quantidade")
